@@ -33,6 +33,18 @@ export default function Portfolio() {
           <a href="/seoul-night.png" target="_blank" className="filter hover:brightness-75"><Image src={seoulNightThumbnail} alt="Night in Seoul" /></a>
           <a href="/seoul-day.png" target="_blank" className="filter hover:brightness-75"><Image src={seoulDayThumbnail} alt="Day in Seoul" /></a>
         </div>
+        <div className="p-8 sm:p-20 sm:pb-8 flex flex-col gap-8">
+          <h2 className="text-lg font-bold">Motion Graphics</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 w-full gap-px border-y lg:px-20 lg:border-y-0 lg:gap-px">
+          <a href="https://www.youtube.com/watch?v=S9N1ABZ9Wl8" target="_blank" className="filter hover:brightness-75">
+            <video preload="none" aria-label="Video player" className="w-full aspect-square object-cover" autoPlay muted loop>
+              <source src="/motion-thumb.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </a>
+        </div>
+        
       </main>
     </div>
   );
