@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from "next/image";
 import magazineThumb from "../../public/magazine-thumb.png";
 import catalogThumb from "../../public/catalog-thumb.png";
@@ -14,7 +15,7 @@ export default function Portfolio() {
       <main className="max-w-screen-lg bg-white min-h-full pb-20">
         <div className="p-8 sm:p-20 sm:pb-8 flex flex-col gap-8">
           <h1 className="text-xl font-bold">
-            <a className="hover:underline hover:underline-offset-4" href="/">Hoseok Choi</a>
+            <Link className="hover:underline hover:underline-offset-4" href="/">Hoseok Choi</Link>
           </h1>
           <h2 className="text-lg font-bold">Editorial Design</h2>
         </div>
