@@ -1,7 +1,7 @@
 import Image from "next/image";
-import magazine from "../../public/magazine.png";
-import catalog from "../../public/catalog.png";
-import textbook from "../../public/textbook.png";
+import magazineThumb from "../../public/magazine-thumb.png";
+import catalogThumb from "../../public/catalog-thumb.png";
+import textbookThumb from "../../public/textbook-thumb.png";
 import guamThumbnail from "../../public/guam-thumb.png";
 import itaewonThumbnail from "../../public/itaewon-thumb.png";
 import seoulDayThumbnail from "../../public/seoul-day-thumb.png";
@@ -19,9 +19,9 @@ export default function Portfolio() {
           <h2 className="text-lg font-bold">Editorial Design</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 w-full gap-px border-y lg:px-20 lg:border-y-0 lg:gap-px">
-          <a href="/magazine.pdf" target="_blank" className="filter hover:brightness-75"><Image src={magazine} alt="Magazine" /></a>
-          <a href="/catalog.pdf" target="_blank" className="filter hover:brightness-75"><Image src={catalog} alt="Catalog" /></a>
-          <a href="/textbook.pdf" target="_blank" className="filter hover:brightness-75"><Image src={textbook} alt="Textbook" /></a>
+          <a href="/magazine.pdf" target="_blank" className="filter hover:brightness-75"><Image src={magazineThumb} alt="Magazine" /></a>
+          <a href="/catalog.pdf" target="_blank" className="filter hover:brightness-75"><Image src={catalogThumb} alt="Catalog" /></a>
+          <a href="/textbook.pdf" target="_blank" className="filter hover:brightness-75"><Image src={textbookThumb} alt="Textbook" /></a>
         </div>
         <div className="p-8 sm:p-20 sm:pb-8 flex flex-col gap-8">
           <h2 className="text-lg font-bold">Digital Illustrations</h2>
