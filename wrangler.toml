@@ -9,3 +9,4 @@ NODE_VERSION = "22.13.0"
 
 [env.production.vars]
 IS_PRODUCTION = "1"
+NODE_VERSION = "22.13.0"
