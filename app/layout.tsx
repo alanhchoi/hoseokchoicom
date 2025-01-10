@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Script src="https://cloud.umami.is/script.js" data-website-id="50a04837-02f3-4b36-b0a7-9b70ceddffe9" />
     </html>
   );
 }
