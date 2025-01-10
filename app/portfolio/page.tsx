@@ -39,7 +39,7 @@ export default function Portfolio() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 w-full gap-px border-y lg:px-20 lg:border-y-0 dark:border-transparent lg:gap-px">
           <a href="https://www.youtube.com/watch?v=S9N1ABZ9Wl8" target="_blank" className="filter hover:brightness-75">
-            <video preload="none" aria-label="Video player" className="w-full aspect-square object-cover" autoPlay muted loop>
+            <video preload="none" aria-label="Video player" className="w-full aspect-square object-cover" autoPlay muted loop playsInline>
               <source src="/motion-thumb.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
