@@ -58,7 +58,9 @@ export default async function Page({ params }: { params: Promise<Params> }) {
               {new Date(postData.date).toLocaleDateString()}
             </time>
           </div>
-          <div className="prose prose-zinc lg:prose-xl dark:prose-invert prose-a:underline-offset-4 prose-h2:font-semibold">
+          <div
+            className={`prose prose-zinc lg:prose-xl dark:prose-invert prose-a:underline-offset-4 prose-h2:font-semibold ${postData.language === "ko" ? "prose-p:text-justify" : ""}`}
+          >
             <Markdown>{postData.markdown}</Markdown>
           </div>
         </div>
