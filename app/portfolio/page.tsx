@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Link from 'next/link'
 import Image from "next/image";
 import magazineThumb from "../../public/magazine-thumb.png";
@@ -49,4 +50,8 @@ export default function Portfolio() {
       </main>
     </div>
   );
+}
+
+export const metadata: Metadata = {
+  title: 'Portfolio | Hoseok Choi'
 }

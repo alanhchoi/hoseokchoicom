@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import fs from 'fs/promises';
 import path from 'path';
@@ -64,4 +65,8 @@ export default async function Page() {
       </main>
     </div>
   );
+}
+
+export const metadata: Metadata = {
+  title: 'Blog | Hoseok Choi'
 }

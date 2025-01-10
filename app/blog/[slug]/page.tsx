@@ -20,7 +20,9 @@ async function getPostData(id: string) {
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+type Params = { slug: string }
+
+export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params
   const postData = await getPostData(slug)
 
@@ -58,4 +60,13 @@ export async function generateStaticParams() {
   return fileNames.map((fileName) => ({
     slug: fileName.replace(/\.mdx?$/, '')
   }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }) {
+  const { slug } = await params
+  const postData = await getPostData(slug)
+
+  return {
+    title: `${postData.title} | Blog | Hoseok Choi`,
+  }
 }
