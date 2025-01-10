@@ -20,6 +20,14 @@ export default function Home() {
           >
             Blog
           </Link>
+          <a
+            className="hover:underline hover:underline-offset-4"
+            target="_blank"
+            href="https://forms.gle/E2YB31VZ3G7euwQX7"
+            data-umami-event="Contact link"
+          >
+            Contact
+          </a>
         </nav>
 
         <footer className="flex items-center gap-2 flex-wrap">
