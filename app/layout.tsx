@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         {children}
       </body>
-      <Script src="https://cloud.umami.is/script.js" data-website-id="50a04837-02f3-4b36-b0a7-9b70ceddffe9" />
+      {process.env.IS_PRODUCTION && (<Script src="https://cloud.umami.is/script.js" data-website-id="50a04837-02f3-4b36-b0a7-9b70ceddffe9" />)}
     </html>
   );
 }
