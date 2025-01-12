@@ -6,6 +6,7 @@ import "./globals.css";
 const hahmlet = Hahmlet({
   variable: "--font-hahmlet",
   weight: ["400"],
+  subsets: ["latin"],
 });
 
 const geistSans = Geist({
