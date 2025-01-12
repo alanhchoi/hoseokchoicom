@@ -48,7 +48,17 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         </nav>
         <div className="px-8 sm:px-20 sm:pb-8 flex flex-col gap-2 text-xl">
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-16 mb-8 sm:mb-16 lg:items-baseline">
-            <h1 className="text-3xl lg:text-5xl font-bold flex-1">
+            <h1
+              className={`text-3xl lg:text-5xl font-bold flex-1 ${postData.language === "ko" ? "lg:leading-tight break-keep" : ""}`}
+            >
+              {postData.tag === "book" && (
+                <>
+                  <span role="img" aria-label="Book review">
+                    📖
+                  </span>
+                  &nbsp;
+                </>
+              )}
               {postData.title}
             </h1>
             <time
@@ -59,7 +69,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             </time>
           </div>
           <div
-            className={`prose prose-zinc lg:prose-xl dark:prose-invert prose-a:underline-offset-4 prose-h2:font-semibold ${postData.language === "ko" ? "prose-p:text-justify" : ""}`}
+            className={`prose prose-zinc lg:prose-xl dark:prose-invert prose-a:underline-offset-4 prose-h2:font-semibold ${postData.language === "ko" ? "prose-p:text-justify prose-blockquote:not-italic prose-blockquote:font-[family-name:var(--font-hahmlet)] prose-blockquote:font-normal prose-blockquote:text-[97%]" : ""}`}
           >
             <Markdown>{postData.markdown}</Markdown>
           </div>

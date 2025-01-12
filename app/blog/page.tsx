@@ -8,23 +8,25 @@ import { PostMetaData } from "./_lib/types";
 
 async function getSortedPostsData() {
   const fileNames = await fs.readdir(postsDirectory);
-  const getPostData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx?$/, "");
+  const getPostData = fileNames
+    .filter((fileName) => fileName.endsWith(".md"))
+    .map((fileName) => {
+      const id = fileName.replace(/\.md$/, "");
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName);
 
-    return fs.readFile(fullPath, "utf8").then((fileContents) => {
-      // Use gray-matter to parse the post metadata section
-      const matterResult = matter(fileContents);
+      return fs.readFile(fullPath, "utf8").then((fileContents) => {
+        // Use gray-matter to parse the post metadata section
+        const matterResult = matter(fileContents);
 
-      // Combine the data with the id
-      return {
-        id,
-        ...matterResult.data,
-      } as { id: string } & PostMetaData;
+        // Combine the data with the id
+        return {
+          id,
+          ...matterResult.data,
+        } as { id: string } & PostMetaData;
+      });
     });
-  });
 
   const allPostsData = await Promise.all(getPostData);
 
@@ -53,13 +55,23 @@ export default async function Page() {
           /<h2 className="font-semibold">Blog</h2>
         </div>
         <ul className="flex flex-col items-start px-8 sm:px-20">
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, title, tag }) => (
             <li key={id} className="mb-8">
               <Link
                 className="flex flex-col gap-1 hover:underline hover:underline-offset-4"
                 href={`/blog/${id}`}
               >
-                <div className="text-2xl font-medium">{title}</div>
+                <div className="text-2xl font-medium">
+                  {tag === "book" && (
+                    <>
+                      <span role="img" aria-label="Book review">
+                        📖
+                      </span>
+                      &nbsp;
+                    </>
+                  )}
+                  {title}
+                </div>
                 <time dateTime={date}>
                   {new Date(date).toLocaleDateString()}
                 </time>
