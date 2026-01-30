@@ -1,6 +1,6 @@
 ---
 title: "영의 자리 - 고민실"
-date: "2024-01-14"
+date: 2024-01-14
 language: "ko"
 tag: book
 ---

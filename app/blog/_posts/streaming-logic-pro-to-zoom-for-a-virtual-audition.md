@@ -1,6 +1,6 @@
 ---
 title: "Streaming Logic Pro to Zoom for a Virtual Audition"
-date: "2024-01-22"
+date: 2024-01-22
 language: "en"
 ---
 
