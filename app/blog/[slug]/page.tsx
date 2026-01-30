@@ -27,10 +27,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const postData = await getPostData(slug);
 
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] grid place-items-center min-h-screen bg-zinc-200 dark:bg-zinc-950">
-      <main className="max-w-screen-lg w-full bg-white dark:bg-zinc-900 min-h-full pb-20">
-        <nav className="p-8 sm:p-20 sm:pb-16 flex flex-row gap-2 text-xl">
-          <div className="text-xl font-bold">
+    <div className="place-items-center grid bg-zinc-200 dark:bg-zinc-950 min-h-screen font-[family-name:var(--font-sans-serif)]">
+      <main className="bg-white dark:bg-zinc-900 pb-20 w-full max-w-screen-lg min-h-full">
+        <nav className="flex flex-row gap-2 p-8 sm:p-20 sm:pb-16 text-xl">
+          <div className="font-bold text-xl">
             <Link className="hover:underline hover:underline-offset-4" href="/">
               Hoseok Choi
             </Link>
@@ -46,10 +46,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             </Link>
           </div>
         </nav>
-        <div className="px-8 sm:px-20 sm:pb-8 flex flex-col gap-2 text-xl">
-          <div className="flex flex-col lg:flex-row gap-2 lg:gap-16 mb-8 sm:mb-16 lg:items-baseline">
+        <div className="flex flex-col gap-2 px-8 sm:px-20 sm:pb-8 text-xl">
+          <div className="flex lg:flex-row flex-col lg:items-baseline gap-2 lg:gap-16 mb-8 sm:mb-16 font-[family-name:var(--font-serif)]">
             <h1
-              className={`text-3xl lg:text-5xl font-bold flex-1 ${postData.language === "ko" ? "lg:leading-tight break-keep" : ""}`}
+              className={`text-3xl lg:text-5xl font-semibold flex-1 ${postData.language === "ko" ? "lg:leading-tight break-keep" : ""}`}
             >
               {postData.tag === "book" && (
                 <>
@@ -62,14 +62,14 @@ export default async function Page({ params }: { params: Promise<Params> }) {
               {postData.title}
             </h1>
             <time
-              className="text-xl lg:text-3xl font-light self-end"
+              className="self-end font-normal text-xl lg:text-3xl"
               dateTime={postData.date}
             >
               {new Date(postData.date).toLocaleDateString()}
             </time>
           </div>
           <div
-            className={`prose prose-zinc lg:prose-xl dark:prose-invert prose-a:underline-offset-4 prose-h2:font-semibold ${postData.language === "ko" ? "prose-p:text-justify prose-blockquote:not-italic prose-blockquote:font-[family-name:var(--font-hahmlet)] prose-blockquote:font-normal prose-blockquote:text-[97%]" : ""}`}
+            className={`prose prose-stone lg:prose-xl dark:prose-invert prose-a:underline-offset-4 prose-h2:font-semibold ${postData.language === "ko" ? "prose-p:text-justify prose-blockquote:not-italic prose-blockquote:font-[family-name:var(--font-hahmlet)] prose-blockquote:font-normal prose-blockquote:text-[97%]" : "prose-p:text-justify break-words hyphens-auto prose-h2:font-medium"}`}
           >
             <Markdown>{postData.markdown}</Markdown>
           </div>

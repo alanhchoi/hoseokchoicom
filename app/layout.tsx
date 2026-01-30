@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono, Hahmlet } from "next/font/google";
+import {
+  Geist_Mono,
+  Hahmlet,
+  Newsreader,
+  Instrument_Sans,
+} from "next/font/google";
 import "./globals.css";
 
 const hahmlet = Hahmlet({
@@ -9,13 +14,18 @@ const hahmlet = Hahmlet({
   subsets: ["latin"],
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSansSerif = Instrument_Sans({
+  variable: "--font-sans-serif",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontMonospace = Geist_Mono({
+  variable: "--font-monospace",
+  subsets: ["latin"],
+});
+
+const fontSerif = Newsreader({
+  variable: "--font-serif",
   subsets: ["latin"],
 });
 
@@ -32,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${hahmlet.variable} antialiased`}
+        className={`${fontSansSerif.variable} ${fontMonospace.variable} ${hahmlet.variable} ${fontSerif.variable} antialiased`}
       >
         {children}
       </body>

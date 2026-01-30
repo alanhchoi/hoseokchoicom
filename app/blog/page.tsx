@@ -44,10 +44,10 @@ export default async function Page() {
   const allPostsData = await getSortedPostsData();
 
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] grid place-items-center min-h-screen bg-zinc-200 dark:bg-zinc-950">
-      <main className="max-w-screen-lg w-full bg-white dark:bg-zinc-900 min-h-full pb-20">
-        <div className="p-8 sm:p-20 sm:pb-8 flex flex-row gap-2 text-xl">
-          <h1 className="text-xl font-bold">
+    <div className="place-items-center grid bg-zinc-200 dark:bg-zinc-950 min-h-screen font-[family-name:var(--font-sans-serif)]">
+      <main className="bg-white dark:bg-zinc-900 pb-20 w-full max-w-screen-lg min-h-full">
+        <div className="flex flex-row gap-2 p-8 sm:p-20 sm:pb-8 text-xl">
+          <h1 className="font-bold text-xl">
             <Link className="hover:underline hover:underline-offset-4" href="/">
               Hoseok Choi
             </Link>
@@ -61,7 +61,7 @@ export default async function Page() {
                 className="flex flex-col gap-1 hover:underline hover:underline-offset-4"
                 href={`/blog/${id}`}
               >
-                <div className="text-2xl font-medium">
+                <div className="font-medium text-2xl">
                   {tag === "book" && (
                     <>
                       <span role="img" aria-label="Book review">
