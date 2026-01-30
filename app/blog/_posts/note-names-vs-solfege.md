@@ -1,6 +1,6 @@
 ---
 title: Note Names vs. Solfege
-date: 2024-01-13
+date: 2024-01-30
 language: en
 ---
 
